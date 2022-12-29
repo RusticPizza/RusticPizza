@@ -7,15 +7,17 @@
       body {
         background-color: lightblue;
         text-align: center;
-        align-items: center;
       }
       
       .loader {
   width: 64px;
   height: 144px;
   display: inline-block;
-  left: 5px;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
   position: relative;
+  
   border: 2px solid #FFF;
   box-sizing: border-box;
   animation: animloader 2s linear infinite alternate;
