@@ -7,17 +7,17 @@
       body {
         background-color: lightblue;
         text-align: center;
-        margin: auto;
+        display: relative;
+        align-items: center;
+        justify-content: center;
       }
- 
+
+
       .loader {
-  width: 64px;
-  height: 144px;
-  display: flex;
-  margin: auto;
-  justify-content: center;
+  width: 32px;
+  height: 72px;
+  margin: 50%;
   border: 2px solid #FFF;
-  box-sizing: border-box;
   animation: animloader 2s linear infinite alternate;
   color: #FF3D00;
   border-radius: 0 0 4px 4px;
@@ -35,29 +35,7 @@
   </style>
 </head>
 <body>
-  <script>
-    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyNiZuehVfXHHw5naXYV0Bkfi-2xGvTKRtKN_8qqq9eoioGfDXI3-SS-vU0K6PlFz9H/exec";
-    
-    var url = document.location.href;
-    var k = url.substr(url.lastIndexOf("k=")+2);
-    
-    if(k){
-      fetch(AS_URL_BASE+'?k='+k)
-      .then(r => r.text())
-      .then((r) => {
-        console.log(r);
-        //document.write(r);
-        if(r){
-          document.location.replace(r);
-        }
-      })
-      .catch(err => console.log(err))
-    }
+  <div class="loader"></div>
 
-  </script>
-  
- <span class="loader"></span>
-  
-  
 </body>
 </html>
