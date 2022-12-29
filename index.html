@@ -34,6 +34,27 @@
 }
   </style>
 </head>
+  
+ <script>
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbyNiZuehVfXHHw5naXYV0Bkfi-2xGvTKRtKN_8qqq9eoioGfDXI3-SS-vU0K6PlFz9H/exec";
+    
+    var url = document.location.href;
+    var k = url.substr(url.lastIndexOf("k=")+2);
+    
+    if(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r => r.text())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r){
+          document.location.replace(r);
+        }
+      })
+      .catch(err => console.log(err))
+    }
+
+  </script>
 <body>
   <div class="loader"></div>
 
